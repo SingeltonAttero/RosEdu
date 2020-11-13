@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "ru.leadersofdigital.rosedu"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "androidx.appcompat:appcompat:${versions_androidx_appcompat}"
+    implementation "androidx.recyclerview:recyclerview:${versions_androidx_recyclerview}"
+    implementation "androidx.cardview:cardview:${versions_androidx_cardview}"
+    implementation "androidx.fragment:fragment-ktx:${versions_fragment}"
+
+    //Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions_lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions_lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions_lifecycle}"
+    //Room
+    implementation "androidx.room:room-runtime:${versions_room}"
+    annotationProcessor "androidx.room:room-compiler:${versions_room}"
+    implementation "androidx.room:room-testing:${versions_room}"
+    implementation "androidx.room:room-ktx:${versions_room}"
+    //Networking
+    implementation "com.squareup.retrofit2:retrofit:${versions_retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions_retrofit}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${versions_okhttp_logging_interceptor}"
+    // Image loading
+    implementation("io.coil-kt:coil:1.0.0")
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+    // DI
+    implementation "org.koin:koin-androidx-scope:${versions_koin}"
+    implementation "org.koin:koin-androidx-viewmodel:${versions_koin}"
+    //AdapterDelegates
+    implementation "com.hannesdorfmann:adapterdelegates4:${versions_adapter_delegates}"
+    implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-layoutcontainer:${versions_adapter_delegates}"
+    //Cicerone
+    implementation "ru.terrakok.cicerone:cicerone:${versions_cicerone}"
+    //Timber
+    implementation "com.jakewharton.timber:timber:${versions_timber}"
+    // test
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+}
