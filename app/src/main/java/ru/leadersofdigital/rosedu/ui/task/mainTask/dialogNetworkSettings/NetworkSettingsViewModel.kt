@@ -12,7 +12,7 @@ class NetworkSettingsViewModel(resourceManager: ResourceManager) :
             NetworkSettingsState(
                 resourceManager.getString(R.string.device_title, "Test"),
                 resourceManager.getString(R.string.device_type, "Test type")
-        )
+            )
         )
     }
 }
