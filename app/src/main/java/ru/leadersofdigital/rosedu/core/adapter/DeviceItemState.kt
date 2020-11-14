@@ -1,6 +1,7 @@
 package ru.leadersofdigital.rosedu.core.adapter
 
 import androidx.annotation.DrawableRes
+import ru.leadersofdigital.rosedu.models.model.TypeConnection
 import ru.leadersofdigital.rosedu.models.model.TypeDevice
 
 sealed class DeviceItemState(open val id: Int) {
@@ -17,6 +18,7 @@ sealed class DeviceItemState(open val id: Int) {
         val title: String,
         val type: TypeDevice,
         @DrawableRes val dragImage: Int,
-        val isSelect: Boolean = false
+        val isSelect: Boolean = false,
+        val typeConnection: TypeConnection = TypeConnection.TWISTED_PAIR
     ) : DeviceItemState(id)
 }

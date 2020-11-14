@@ -24,6 +24,26 @@
             android:textColor="@color/white"
             android:textSize="20sp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubscriptionGoose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/subscription_btn_title"
+            android:textSize="13sp"
+            app:backgroundTint="#2196F3"
+            app:cornerRadius="13dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSendGoose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/send_goose_btn_title"
+            android:textSize="13sp"
+            app:backgroundTint="#8BC34A"
+            app:cornerRadius="13dp" />
+
     </LinearLayout>
 
     <FrameLayout

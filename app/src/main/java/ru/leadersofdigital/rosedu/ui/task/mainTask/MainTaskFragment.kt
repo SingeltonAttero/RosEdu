@@ -1,5 +1,7 @@
 package ru.leadersofdigital.rosedu.ui.task.mainTask
 
+import android.graphics.Color
+import android.graphics.Paint
 import android.os.Bundle
 import android.view.DragEvent
 import android.view.LayoutInflater
@@ -19,6 +21,7 @@ import ru.leadersofdigital.rosedu.core.drag.dragView
 import ru.leadersofdigital.rosedu.core.extensions.clicks
 import ru.leadersofdigital.rosedu.core.scene.SceneFrameLayout
 import ru.leadersofdigital.rosedu.di.Qualifiers
+import ru.leadersofdigital.rosedu.models.model.TypeConnection
 import ru.leadersofdigital.rosedu.models.model.TypeDevice
 import ru.leadersofdigital.rosedu.ui.device.DeviceFragment
 import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogDeviceSettings.DeviceSettingsDialogFragment
@@ -96,7 +99,8 @@ class MainTaskFragment : BaseFragment<MainTaskState, MainTaskViewModel>(R.layout
                         scene.positionX + (scene.width / 2),
                         scene.positionY + (scene.height - 70),
                         scene.height,
-                        isDraw = scene.isOpenConnect
+                        isDraw = scene.isOpenConnect,
+                        scene.typeConnection
                     )
                 )
                 val backgroundImageConnection =
@@ -151,9 +155,32 @@ class MainTaskFragment : BaseFragment<MainTaskState, MainTaskViewModel>(R.layout
                 )
             } else drawLineField
         }.forEach {
-            containerScene.addDrawConnections(it)
+            containerScene.addDrawConnections(it, creatPaint(it.typeConnection))
         }
         containerScene.allDrawConnection()
+    }
+
+    private fun creatPaint(typeConnection: TypeConnection): Paint {
+        return when (typeConnection) {
+            TypeConnection.TWISTED_PAIR -> {
+                val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+                paint.color = Color.parseColor("#795548")
+                paint.strokeWidth = 10F
+                paint
+            }
+            TypeConnection.OPTICAL_FIBER_O -> {
+                val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+                paint.color = Color.parseColor("#7C4DFF")
+                paint.strokeWidth = 12F
+                paint
+            }
+            TypeConnection.OPTICAL_FIBER_M -> {
+                val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+                paint.color = Color.parseColor("#42A5F5")
+                paint.strokeWidth = 8F
+                paint
+            }
+        }
     }
 
     override fun onBackPressed() {
