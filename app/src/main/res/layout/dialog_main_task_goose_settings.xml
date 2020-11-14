@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_rounded"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/goose_settings_title"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/divider_color"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"/>
+
+            <TextView
+                android:id="@+id/textViewEnterIed2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/goose_settings_enter_ied2"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewExitIed1" />
+
+            <TextView
+                android:id="@+id/tvEnter1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_enter_1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbEnter1ToExit1"
+                app:layout_constraintEnd_toEndOf="@+id/textViewEnterIed2"
+                app:layout_constraintStart_toStartOf="@+id/textViewEnterIed2"
+                app:layout_constraintTop_toTopOf="@+id/cbEnter1ToExit1" />
+
+            <TextView
+                android:id="@+id/tvEnter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_enter_2"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbEnter2ToExit1"
+                app:layout_constraintEnd_toEndOf="@+id/tvEnter1"
+                app:layout_constraintStart_toStartOf="@+id/tvEnter1"
+                app:layout_constraintTop_toTopOf="@+id/cbEnter2ToExit1" />
+
+            <TextView
+                android:id="@+id/tvEnter3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_enter_3"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbEnter3ToExit1"
+                app:layout_constraintEnd_toEndOf="@+id/tvEnter2"
+                app:layout_constraintStart_toStartOf="@+id/tvEnter2"
+                app:layout_constraintTop_toTopOf="@+id/cbEnter3ToExit1" />
+
+            <TextView
+                android:id="@+id/tvExit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_exit_1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewEnterIed2"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/textViewEnterIed2" />
+
+            <TextView
+                android:id="@+id/tvExit2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_exit_2"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvExit1"
+                app:layout_constraintStart_toEndOf="@+id/tvExit1"
+                app:layout_constraintTop_toTopOf="@+id/tvExit1" />
+
+            <TextView
+                android:id="@+id/tvExit3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_exit_3"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvExit2"
+                app:layout_constraintStart_toEndOf="@+id/tvExit2"
+                app:layout_constraintTop_toTopOf="@+id/tvExit2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter1ToExit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvExit1"
+                app:layout_constraintStart_toStartOf="@+id/tvExit1"
+                app:layout_constraintTop_toBottomOf="@+id/tvExit1" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter1ToExit2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvExit2"
+                app:layout_constraintStart_toStartOf="@+id/tvExit2"
+                app:layout_constraintTop_toBottomOf="@+id/tvExit2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter1ToExit3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvExit3"
+                app:layout_constraintStart_toStartOf="@+id/tvExit3"
+                app:layout_constraintTop_toBottomOf="@+id/tvExit3" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter2ToExit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter1ToExit1"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter1ToExit1"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter1ToExit1" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter2ToExit2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter1ToExit2"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter1ToExit2"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter1ToExit2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter2ToExit3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter1ToExit3"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter1ToExit3"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter1ToExit3" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter3ToExit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter2ToExit1"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter2ToExit1"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter2ToExit1" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter3ToExit2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter2ToExit2"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter2ToExit2"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter2ToExit2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter3ToExit3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter2ToExit3"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter2ToExit3"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter2ToExit3" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/divider_color"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter3ToExit2" />
+
+            <TextView
+                android:id="@+id/textViewEnterIed1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/goose_settings_enter_ied1"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewExitIed2" />
+
+
+            <TextView
+                android:id="@+id/textViewExitIed1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/goose_settings_exit_ied1"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvExit3"
+                app:layout_constraintStart_toStartOf="@+id/tvExit1"
+                app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+            <TextView
+                android:id="@+id/textViewExitIed2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/goose_settings_exit_ied2"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvExit3v2"
+                app:layout_constraintStart_toStartOf="@+id/tvExit1v2"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <TextView
+                android:id="@+id/tvEnter1v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_enter_1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbEnter1ToExit1v2"
+                app:layout_constraintEnd_toEndOf="@+id/textViewEnterIed1"
+                app:layout_constraintStart_toStartOf="@+id/textViewEnterIed1"
+                app:layout_constraintTop_toTopOf="@+id/cbEnter1ToExit1v2" />
+
+            <TextView
+                android:id="@+id/tvEnter2v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_enter_2"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbEnter2ToExit1v2"
+                app:layout_constraintEnd_toEndOf="@+id/tvEnter1v2"
+                app:layout_constraintStart_toStartOf="@+id/tvEnter1v2"
+                app:layout_constraintTop_toTopOf="@+id/cbEnter2ToExit1v2" />
+
+            <TextView
+                android:id="@+id/tvEnter3v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_enter_3"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbEnter3ToExit1v2"
+                app:layout_constraintEnd_toEndOf="@+id/tvEnter2v2"
+                app:layout_constraintStart_toStartOf="@+id/tvEnter2v2"
+                app:layout_constraintTop_toTopOf="@+id/cbEnter3ToExit1v2" />
+
+            <TextView
+                android:id="@+id/tvExit1v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_exit_1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewEnterIed1"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/textViewEnterIed1" />
+
+            <TextView
+                android:id="@+id/tvExit2v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_exit_2"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvExit1v2"
+                app:layout_constraintStart_toEndOf="@+id/tvExit1v2"
+                app:layout_constraintTop_toTopOf="@+id/tvExit1v2" />
+
+            <TextView
+                android:id="@+id/tvExit3v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:drawableStartCompat="@drawable/ic_exit"
+                android:text="@string/goose_settings_exit_3"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvExit2v2"
+                app:layout_constraintStart_toEndOf="@+id/tvExit2v2"
+                app:layout_constraintTop_toTopOf="@+id/tvExit2v2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter1ToExit1v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvExit1v2"
+                app:layout_constraintStart_toStartOf="@+id/tvExit1v2"
+                app:layout_constraintTop_toBottomOf="@+id/tvExit1v2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter1ToExit2v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvExit2v2"
+                app:layout_constraintStart_toStartOf="@+id/tvExit2v2"
+                app:layout_constraintTop_toBottomOf="@+id/tvExit2v2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter1ToExit3v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvExit3v2"
+                app:layout_constraintStart_toStartOf="@+id/tvExit3v2"
+                app:layout_constraintTop_toBottomOf="@+id/tvExit3v2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter2ToExit1v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter1ToExit1v2"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter1ToExit1v2"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter1ToExit1v2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter2ToExit2v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter1ToExit2v2"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter1ToExit2v2"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter1ToExit2v2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter2ToExit3v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter1ToExit3v2"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter1ToExit3v2"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter1ToExit3v2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter3ToExit1v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter2ToExit1v2"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter2ToExit1v2"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter2ToExit1v2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter3ToExit2v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter2ToExit2v2"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter2ToExit2v2"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter2ToExit2v2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbEnter3ToExit3v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@null"
+                android:translationX="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/cbEnter2ToExit3v2"
+                app:layout_constraintStart_toStartOf="@+id/cbEnter2ToExit3v2"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter2ToExit3v2" />
+
+            <Button
+                android:id="@+id/buttonApply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="@string/common_accept"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbEnter3ToExit3v2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

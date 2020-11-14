@@ -10,8 +10,9 @@ import ru.leadersofdigital.rosedu.ui.device.DeviceViewModel
 import ru.leadersofdigital.rosedu.ui.task.TaskFlowViewModel
 import ru.leadersofdigital.rosedu.ui.task.mainTask.MainTaskViewModel
 import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogDeviceSettings.DeviceSettingsViewModel
+import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogGooseSettings.GooseSettingsViewModel
 import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogNetworkSettings.NetworkSettingsViewModel
-import ru.leadersofdigital.rosedu.ui.task.testTask.TestTaskViewModel
+import ru.leadersofdigital.rosedu.ui.task.testTask.QuizViewModel
 import ru.leadersofdigital.rosedu.ui.tasksSelection.TasksSelectionViewModel
 import ru.terrakok.cicerone.Cicerone
 
@@ -26,11 +27,12 @@ internal object GlobalModules {
         viewModel { TasksSelectionViewModel() }
         viewModel { TaskFlowViewModel() }
         viewModel { MainTaskViewModel(get()) }
-        viewModel { TestTaskViewModel() }
+        viewModel { QuizViewModel(get()) }
         viewModel { HelpViewModel(get()) }
         viewModel { NetworkSettingsViewModel(get(), get()) }
         viewModel { DeviceSettingsViewModel(get(), get()) }
         viewModel { DeviceViewModel(get()) }
+        viewModel { GooseSettingsViewModel(get()) }
     }
 
     private val navigationModule = module {

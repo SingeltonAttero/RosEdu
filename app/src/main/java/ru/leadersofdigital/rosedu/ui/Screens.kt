@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import ru.leadersofdigital.rosedu.ui.auth.AuthFragment
 import ru.leadersofdigital.rosedu.ui.task.TaskFlowFragment
 import ru.leadersofdigital.rosedu.ui.task.mainTask.MainTaskFragment
-import ru.leadersofdigital.rosedu.ui.task.testTask.TestTaskFragment
+import ru.leadersofdigital.rosedu.ui.task.testTask.QuizFragment
 import ru.leadersofdigital.rosedu.ui.tasksSelection.TasksSelectionFragment
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
@@ -25,7 +25,7 @@ object Screens {
     }
 
     object TestTaskScreen : SupportAppScreen() {
-        override fun getFragment(): Fragment = TestTaskFragment.newInstance()
+        override fun getFragment(): Fragment = QuizFragment.newInstance()
     }
 
     object TaskFlowScreen : SupportAppScreen() {
