@@ -11,5 +11,6 @@ data class SceneState(
     val width: Int,
     val height: Int,
     val positionX: Int,
-    val positionY: Int
+    val positionY: Int,
+    val isSelected: Boolean = false
 )

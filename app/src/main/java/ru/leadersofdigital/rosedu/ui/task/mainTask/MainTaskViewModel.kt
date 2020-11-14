@@ -16,7 +16,7 @@ class MainTaskViewModel : BaseViewModel<MainTaskState>(MainTaskState(listOf())) 
     fun handleDragParticle(stringId: String, x: Int, y: Int) {
         val originId = stringId.toInt()
         val subDevice = DataSourceDevice.deviceLIst.map { it.listSubDevice }.flatten().first { originId == it.id }
-        val scale = if (subDevice.type == TypeDevice.INDUSTRIAL_SWITCHES) 1.5F else 1F
+        val scale = if (subDevice.type == TypeDevice.INDUSTRIAL_SWITCHES) 1.2F else 1F
         if (currentState.itemScenes.map { it.subDevice.id }.contains(originId)) {
             val newItems = currentState.itemScenes.map {
                 if (it.subDevice.id == originId) it.copy(
@@ -53,6 +53,14 @@ class MainTaskViewModel : BaseViewModel<MainTaskState>(MainTaskState(listOf())) 
         updateState(
             currentState.copy(
                 itemScenes = currentState.itemScenes.filter { it.subDevice.id != id }
+            )
+        )
+    }
+
+    fun selectScene(id: Int) {
+        updateState(
+            currentState.copy(
+                itemScenes = currentState.itemScenes.map { if (it.subDevice.id == id) it.copy(isSelected = !it.isSelected) else it }
             )
         )
     }
