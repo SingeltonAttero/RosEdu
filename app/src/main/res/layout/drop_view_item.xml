@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/containerMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_drag_item_scene"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDeviceImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/containerMenu"
+        app:layout_constraintEnd_toEndOf="@+id/containerMenu"
+        app:layout_constraintStart_toStartOf="@+id/containerMenu"
+        app:layout_constraintTop_toTopOf="@+id/containerMenu" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMenuSetting"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cirlce_drag_menu"
+        android:padding="6dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/containerMenu"
+        app:layout_constraintStart_toEndOf="@+id/containerMenu"
+        app:layout_constraintTop_toTopOf="@id/containerMenu"
+        app:srcCompat="@drawable/ic_settings_scene_menu" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMenuDelete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/cirlce_drag_menu"
+        android:padding="6dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/containerMenu"
+        app:layout_constraintStart_toEndOf="@+id/containerMenu"
+        app:layout_constraintTop_toBottomOf="@id/ivMenuSetting"
+        app:srcCompat="@drawable/ic_delete_scene_menu" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMenuConnection"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_drag_menu_connection"
+        android:tint="@color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/containerMenu"
+        app:layout_constraintStart_toEndOf="@+id/containerMenu"
+        app:layout_constraintTop_toBottomOf="@id/ivMenuDelete"
+        app:srcCompat="@drawable/ic_connection_device" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
