@@ -8,7 +8,10 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateLayoutContainer
 import kotlinx.android.synthetic.main.item_device.*
 import kotlinx.android.synthetic.main.item_group_device.*
 import ru.leadersofdigital.rosedu.R
+import ru.leadersofdigital.rosedu.core.drag.ScaleDragShadowBuilder
+import ru.leadersofdigital.rosedu.core.drag.dragView
 import ru.leadersofdigital.rosedu.core.extensions.clicks
+import ru.leadersofdigital.rosedu.models.model.TypeDevice
 
 class DeviceAdapterDelegate(private val click: (item: DeviceItemState) -> Unit = {}) {
 
@@ -34,6 +37,15 @@ class DeviceAdapterDelegate(private val click: (item: DeviceItemState) -> Unit =
 
     private fun createDevice(click: (item: DeviceItemState) -> Unit) =
         adapterDelegateLayoutContainer<DeviceItemState.Device, DeviceItemState>(R.layout.item_device) {
+            itemView.setOnLongClickListener {
+                if (item.type == TypeDevice.CONNECTION) return@setOnLongClickListener false
+                val dragDate = ScaleDragShadowBuilder.createDate(
+                    item.id
+                )
+                val dragImg = ScaleDragShadowBuilder(itemView, itemView.height, itemView.width)
+                it.dragView(dragDate, dragImg)
+                true
+            }
             bind {
                 tvTitleDevice.text = item.title
             }

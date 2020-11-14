@@ -29,7 +29,8 @@ class DeviceViewModel(resourceManager: ResourceManager) : BaseViewModel<DeviceSt
 
                 if (!itemState.isOpenGroup) {
                     val items = currentState.listDevice.toMutableList()
-                    val addItems = subDeviceList.map { DeviceItemState.Device(it.id, it.name, device.type) }
+                    val addItems =
+                        subDeviceList.map { DeviceItemState.Device(it.id, it.name, device.type, itemState.icon) }
                     items.removeAt(indexElementDevice)
                     items.addAll(indexElementDevice, addItems)
 
@@ -46,7 +47,8 @@ class DeviceViewModel(resourceManager: ResourceManager) : BaseViewModel<DeviceSt
                                 it.copy(
                                     isOpenGroup = !it.isOpenGroup
                                 ) else it
-                        }.filter { deviceItemState -> !(subDeviceList.map { it.id }.contains(deviceItemState.id)) }.toMutableList()
+                        }.filter { deviceItemState -> !(subDeviceList.map { it.id }.contains(deviceItemState.id)) }
+                            .toMutableList()
                     updateState(
                         currentState.copy(
                             listDevice = items
