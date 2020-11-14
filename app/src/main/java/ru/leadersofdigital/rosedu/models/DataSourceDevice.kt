@@ -2,6 +2,7 @@ package ru.leadersofdigital.rosedu.models
 
 import ru.leadersofdigital.rosedu.models.model.Device
 import ru.leadersofdigital.rosedu.models.model.SubDevice
+import ru.leadersofdigital.rosedu.models.model.TypeConnection
 import ru.leadersofdigital.rosedu.models.model.TypeDevice
 
 object DataSourceDevice {
@@ -24,9 +25,19 @@ object DataSourceDevice {
         ),
         Device(
             3, "Подключения", listOf(
-                SubDevice(31, "Витая пара", TypeDevice.CONNECTION),
-                SubDevice(32, "оптоволоконного кабель{одномод.}", TypeDevice.CONNECTION),
-                SubDevice(33, "оптоволоконного кабель {многомод}", TypeDevice.CONNECTION),
+                SubDevice(31, "Витая пара", TypeDevice.CONNECTION, typeConnection = TypeConnection.TWISTED_PAIR),
+                SubDevice(
+                    32,
+                    "оптоволоконного кабель{одномод.}",
+                    TypeDevice.CONNECTION,
+                    typeConnection = TypeConnection.OPTICAL_FIBER_O
+                ),
+                SubDevice(
+                    33,
+                    "оптоволоконного кабель {многомод.}",
+                    TypeDevice.CONNECTION,
+                    typeConnection = TypeConnection.OPTICAL_FIBER_M
+                ),
             ), TypeDevice.CONNECTION
         )
     )

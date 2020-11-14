@@ -5,11 +5,13 @@ import ru.leadersofdigital.rosedu.core.BaseViewModel
 import ru.leadersofdigital.rosedu.core.ResourceManager
 import ru.leadersofdigital.rosedu.core.adapter.DeviceItemState
 import ru.leadersofdigital.rosedu.models.DataSourceDevice
+import ru.leadersofdigital.rosedu.models.MainTaskRepository
 import ru.leadersofdigital.rosedu.models.model.Device
 import ru.leadersofdigital.rosedu.models.model.TypeDevice
 import ru.leadersofdigital.rosedu.ui.device.state.DeviceState
 
-class DeviceViewModel(resourceManager: ResourceManager) : BaseViewModel<DeviceState>(DeviceState("", listOf())) {
+class DeviceViewModel(resourceManager: ResourceManager, private val repository: MainTaskRepository) :
+    BaseViewModel<DeviceState>(DeviceState("", listOf())) {
 
     init {
         updateState(
@@ -37,7 +39,8 @@ class DeviceViewModel(resourceManager: ResourceManager) : BaseViewModel<DeviceSt
                                 deviceScenes.name,
                                 deviceScenes.type,
                                 itemState.icon,
-                                isSelected
+                                isSelected,
+                                deviceScenes.typeConnection
                             )
                         }
                     items.removeAt(indexElementDevice)
@@ -68,12 +71,15 @@ class DeviceViewModel(resourceManager: ResourceManager) : BaseViewModel<DeviceSt
             is DeviceItemState.Device -> {
                 updateState(
                     currentState.copy(
-                        listDevice = currentState.listDevice.map {
-                            if (it.id == itemState.id && it is DeviceItemState.Device && it.type == TypeDevice.CONNECTION) it.copy(
-                                isSelect = true
-                            ) else if (it is DeviceItemState.Device && it.type == TypeDevice.CONNECTION) {
-                                it.copy(isSelect = false)
-                            } else it
+                        listDevice = currentState.listDevice.map { deviceItemState ->
+                            if (deviceItemState.id == itemState.id && deviceItemState is DeviceItemState.Device && deviceItemState.type == TypeDevice.CONNECTION) {
+                                repository.typeConnection = deviceItemState.typeConnection
+                                deviceItemState.copy(
+                                    isSelect = true
+                                )
+                            } else if (deviceItemState is DeviceItemState.Device && deviceItemState.type == TypeDevice.CONNECTION) {
+                                deviceItemState.copy(isSelect = false)
+                            } else deviceItemState
                         }
                     )
                 )

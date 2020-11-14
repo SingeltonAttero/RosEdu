@@ -31,7 +31,7 @@ internal object GlobalModules {
         viewModel { HelpViewModel(get()) }
         viewModel { NetworkSettingsViewModel(get(), get()) }
         viewModel { DeviceSettingsViewModel(get(), get()) }
-        viewModel { DeviceViewModel(get()) }
+        viewModel { DeviceViewModel(get(), get()) }
         viewModel { GooseSettingsViewModel(get()) }
     }
 

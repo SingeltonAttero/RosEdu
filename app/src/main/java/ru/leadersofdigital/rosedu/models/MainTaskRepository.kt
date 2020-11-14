@@ -4,12 +4,14 @@ import ru.leadersofdigital.rosedu.core.validator.Validator
 import ru.leadersofdigital.rosedu.models.model.GooseConnections
 import ru.leadersofdigital.rosedu.models.model.Quiz
 import ru.leadersofdigital.rosedu.models.model.SubDevice
+import ru.leadersofdigital.rosedu.models.model.TypeConnection
 
 class MainTaskRepository {
     private val deviceList: MutableList<SubDevice> = mutableListOf()
 
     val gooseConnections = GooseConnections()
     private var quizList: MutableList<Quiz> = DataSourceQuiz.quizList.toMutableList()
+    var typeConnection = TypeConnection.TWISTED_PAIR
 
     private var selectedDeviceId: Int? = null
 
@@ -30,7 +32,7 @@ class MainTaskRepository {
         deviceList.remove(deviceList.firstOrNull { it.id == id })
     }
 
-    fun getQuizList():List<Quiz> = quizList
+    fun getQuizList(): List<Quiz> = quizList
 
     fun updateQuizAnswers(items: List<Quiz>) {
         quizList = items.toMutableList()

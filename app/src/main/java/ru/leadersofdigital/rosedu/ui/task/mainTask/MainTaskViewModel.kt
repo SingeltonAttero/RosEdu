@@ -78,7 +78,11 @@ class MainTaskViewModel(private val mainTaskRepository: MainTaskRepository) :
     fun handleMenuConnection(id: Int) {
         updateState(
             currentState.copy(
-                itemScenes = currentState.itemScenes.map { if (it.subDevice.id == id) it.copy(isOpenConnect = !it.isOpenConnect && currentState.itemScenes.any { it.subDevice.type == TypeDevice.INDUSTRIAL_SWITCHES }) else it }
+                itemScenes = currentState.itemScenes.map { sceneState ->
+                    if (sceneState.subDevice.id == id) sceneState.copy(
+                        typeConnection = mainTaskRepository.typeConnection,
+                        isOpenConnect = !sceneState.isOpenConnect && currentState.itemScenes.any { it.subDevice.type == TypeDevice.INDUSTRIAL_SWITCHES }) else sceneState
+                }
             )
         )
     }

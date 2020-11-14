@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.widget.FrameLayout
+import ru.leadersofdigital.rosedu.models.model.TypeConnection
 
 class SceneFrameLayout @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
     FrameLayout(context, attrs, defStyleAttr) {
@@ -78,6 +79,7 @@ class SceneFrameLayout @JvmOverloads constructor(context: Context, attrs: Attrib
         val stopX: Int,
         val stopY: Int,
         val witch: Int = 0,
-        val isDraw: Boolean = false
+        val isDraw: Boolean = false,
+        val typeConnection: TypeConnection = TypeConnection.TWISTED_PAIR
     )
 }
