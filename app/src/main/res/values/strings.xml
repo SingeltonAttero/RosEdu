@@ -14,4 +14,18 @@
     <string name="auth_dont_know">Не знаю что делать</string>
     <string name="toolbar_ied_goose_title">Настройка IED на прием-передачу GOOSE сообщений</string>
     <string name="select_device_title">Выберите устройства</string>
+
+    <!--Main Task-->
+
+    <!--Main Task Network Settings-->
+    <string name="network_settings_title">Сетевые настройки</string>
+    <string name="network_settings_device_title">Устройство: %s</string>
+    <string name="network_settings_device_type">Тип: %s</string>
+
+
+    <!--Common-->
+    <string name="common_ip_address">IP адрес</string>
+    <string name="common_ip_mask">Маска подсети</string>
+    <string name="common_description">Описание</string>
+    <string name="common_accept">Применить</string>
 </resources>
