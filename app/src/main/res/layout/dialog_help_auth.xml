@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:theme="@style/AppTheme"
-        android:visibility="invisible"
         tools:ignore="UselessParent"
         tools:visibility="visible">
 

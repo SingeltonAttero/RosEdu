@@ -12,4 +12,18 @@
     <string name="auth_group_hint">Номер учебной группы</string>
     <string name="auth_login">Войти</string>
     <string name="auth_dont_know">Не знаю что делать</string>
+
+    <!--Main Task-->
+
+    <!--Main Task Network Settings-->
+    <string name="network_settings_title">Сетевые настройки</string>
+    <string name="network_settings_device_title">Устройство: %s</string>
+    <string name="network_settings_device_type">Тип: %s</string>
+
+
+    <!--Common-->
+    <string name="common_ip_address">IP адрес</string>
+    <string name="common_ip_mask">Маска подсети</string>
+    <string name="common_description">Описание</string>
+    <string name="common_accept">Применить</string>
 </resources>

@@ -8,7 +8,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.leadersofdigital.rosedu.R
 import ru.leadersofdigital.rosedu.core.BaseFragment
 import ru.leadersofdigital.rosedu.ui.Screens
+import ru.leadersofdigital.rosedu.ui.auth.dialog.HelpDialogFragment
 import ru.leadersofdigital.rosedu.ui.auth.state.AuthState
+import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogNetworkSettings.NetworkSettingsDialogFragment
 import ru.terrakok.cicerone.Router
 
 class AuthFragment : BaseFragment<AuthState, AuthViewModel>(R.layout.fragment_auth) {
@@ -23,5 +25,6 @@ class AuthFragment : BaseFragment<AuthState, AuthViewModel>(R.layout.fragment_au
 
     override fun renderState(state: AuthState) {
         buttonLogin.setOnClickListener { router.navigateTo(Screens.TasksSelectionScreen) }
+        buttonDontKnow.setOnClickListener { HelpDialogFragment.newInstance().show(childFragmentManager, null) }
     }
 }
