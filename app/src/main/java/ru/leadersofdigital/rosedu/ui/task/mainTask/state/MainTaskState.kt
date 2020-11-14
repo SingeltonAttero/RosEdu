@@ -12,5 +12,6 @@ data class SceneState(
     val height: Int,
     val positionX: Int,
     val positionY: Int,
-    val isSelected: Boolean = false
+    val isSelected: Boolean = false,
+    val isOpenConnect: Boolean = false
 )

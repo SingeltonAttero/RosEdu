@@ -37,6 +37,9 @@ class DeviceAdapterDelegate(private val click: (item: DeviceItemState) -> Unit =
 
     private fun createDevice(click: (item: DeviceItemState) -> Unit) =
         adapterDelegateLayoutContainer<DeviceItemState.Device, DeviceItemState>(R.layout.item_device) {
+            itemView.clicks {
+                if (item.type == TypeDevice.CONNECTION) click.invoke(item)
+            }
             itemView.setOnLongClickListener {
                 if (item.type == TypeDevice.CONNECTION) return@setOnLongClickListener false
                 val dragDate = ScaleDragShadowBuilder.createDate(
@@ -48,6 +51,11 @@ class DeviceAdapterDelegate(private val click: (item: DeviceItemState) -> Unit =
             }
             bind {
                 tvTitleDevice.text = item.title
+                if (item.isSelect && item.type == TypeDevice.CONNECTION) {
+                    itemContainerDevice.setBackgroundColor(R.color.select_color)
+                } else {
+                    itemContainerDevice.setBackgroundColor(R.color.colorPrimary)
+                }
             }
         }
 

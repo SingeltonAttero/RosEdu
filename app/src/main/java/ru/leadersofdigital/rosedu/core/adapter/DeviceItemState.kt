@@ -16,6 +16,7 @@ sealed class DeviceItemState(open val id: Int) {
         override val id: Int,
         val title: String,
         val type: TypeDevice,
-        @DrawableRes val dragImage: Int
+        @DrawableRes val dragImage: Int,
+        val isSelect: Boolean = false
     ) : DeviceItemState(id)
 }

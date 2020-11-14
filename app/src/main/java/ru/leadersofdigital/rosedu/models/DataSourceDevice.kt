@@ -26,7 +26,7 @@ object DataSourceDevice {
             3, "Подключения", listOf(
                 SubDevice(31, "Витая пара", TypeDevice.CONNECTION),
                 SubDevice(32, "оптоволоконного кабель{одномод.}", TypeDevice.CONNECTION),
-                SubDevice(31, "оптоволоконного кабель {многомод}", TypeDevice.CONNECTION),
+                SubDevice(33, "оптоволоконного кабель {многомод}", TypeDevice.CONNECTION),
             ), TypeDevice.CONNECTION
         )
     )

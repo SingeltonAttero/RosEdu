@@ -7,7 +7,8 @@ import ru.leadersofdigital.rosedu.models.model.TypeDevice
 import ru.leadersofdigital.rosedu.ui.task.mainTask.state.MainTaskState
 import ru.leadersofdigital.rosedu.ui.task.mainTask.state.SceneState
 
-class MainTaskViewModel(private val mainTaskRepository: MainTaskRepository) : BaseViewModel<MainTaskState>(MainTaskState(listOf())) {
+class MainTaskViewModel(private val mainTaskRepository: MainTaskRepository) :
+    BaseViewModel<MainTaskState>(MainTaskState(listOf())) {
 
     companion object {
         private const val MAX_WIDTH = 480
@@ -67,7 +68,17 @@ class MainTaskViewModel(private val mainTaskRepository: MainTaskRepository) : Ba
     fun selectScene(id: Int) {
         updateState(
             currentState.copy(
-                itemScenes = currentState.itemScenes.map { if (it.subDevice.id == id) it.copy(isSelected = !it.isSelected) else it }
+                itemScenes = currentState.itemScenes.map { sceneState ->
+                    if (sceneState.subDevice.id == id) sceneState.copy(isSelected = !sceneState.isSelected) else sceneState
+                }
+            )
+        )
+    }
+
+    fun handleMenuConnection(id: Int) {
+        updateState(
+            currentState.copy(
+                itemScenes = currentState.itemScenes.map { if (it.subDevice.id == id) it.copy(isOpenConnect = !it.isOpenConnect && currentState.itemScenes.any { it.subDevice.type == TypeDevice.INDUSTRIAL_SWITCHES }) else it }
             )
         )
     }

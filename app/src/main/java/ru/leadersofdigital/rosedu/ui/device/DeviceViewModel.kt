@@ -30,7 +30,16 @@ class DeviceViewModel(resourceManager: ResourceManager) : BaseViewModel<DeviceSt
                 if (!itemState.isOpenGroup) {
                     val items = currentState.listDevice.toMutableList()
                     val addItems =
-                        subDeviceList.map { DeviceItemState.Device(it.id, it.name, device.type, itemState.icon) }
+                        subDeviceList.mapIndexed { index, deviceScenes ->
+                            val isSelected = deviceScenes.type == TypeDevice.CONNECTION && index == 0
+                            DeviceItemState.Device(
+                                deviceScenes.id,
+                                deviceScenes.name,
+                                deviceScenes.type,
+                                itemState.icon,
+                                isSelected
+                            )
+                        }
                     items.removeAt(indexElementDevice)
                     items.addAll(indexElementDevice, addItems)
 
@@ -55,6 +64,19 @@ class DeviceViewModel(resourceManager: ResourceManager) : BaseViewModel<DeviceSt
                         )
                     )
                 }
+            }
+            is DeviceItemState.Device -> {
+                updateState(
+                    currentState.copy(
+                        listDevice = currentState.listDevice.map {
+                            if (it.id == itemState.id && it is DeviceItemState.Device && it.type == TypeDevice.CONNECTION) it.copy(
+                                isSelect = true
+                            ) else if (it is DeviceItemState.Device && it.type == TypeDevice.CONNECTION) {
+                                it.copy(isSelect = false)
+                            } else it
+                        }
+                    )
+                )
             }
         }
     }
