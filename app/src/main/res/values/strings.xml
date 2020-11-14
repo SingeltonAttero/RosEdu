@@ -24,6 +24,19 @@
     <!--Main Task Network Settings-->
     <string name="network_settings_title">Сетевые настройки</string>
 
+    <!--Main Task Goose Settings-->
+    <string name="goose_settings_title">Подписка GOOSE-сообщений</string>
+    <string name="goose_settings_exit_ied2">Выходы IED2</string>
+    <string name="goose_settings_exit_ied1">Выходы IED1</string>
+    <string name="goose_settings_enter_ied1">Входы IED1</string>
+    <string name="goose_settings_enter_ied2">Входы IED2</string>
+
+    <string name="goose_settings_enter_1">Вход 1</string>
+    <string name="goose_settings_enter_2">Вход 2</string>
+    <string name="goose_settings_enter_3">Вход 3</string>
+    <string name="goose_settings_exit_1">Выход 1</string>
+    <string name="goose_settings_exit_2">Выход 2</string>
+    <string name="goose_settings_exit_3">Выход 3</string>
 
     <!--Main Task Device Settings-->
     <string name="device_settings_title">Настройки устройства</string>
@@ -43,6 +56,7 @@
     <string name="common_description">Описание</string>
     <string name="common_accept">Применить</string>
     <string name="common_understand">Понятно</string>
+    <string name="common_finish">Закончить</string>
 
     <!--Descriptions-->
     <string name="gcb_description">GOOSE CONTROL BLOCK</string>

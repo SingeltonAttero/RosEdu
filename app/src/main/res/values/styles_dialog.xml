@@ -13,4 +13,11 @@
         <item name="windowFixedHeightMajor">99%</item>
         <item name="windowFixedHeightMinor">99%</item>
     </style>
+
+    <style name="MaxHeightScreenDialog" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="android:windowMinWidthMajor">80%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+        <item name="windowFixedHeightMajor">99%</item>
+        <item name="windowFixedHeightMinor">99%</item>
+    </style>
 </resources>

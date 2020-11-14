@@ -43,4 +43,9 @@
         <item name="cornerSizeTopLeft">12dp</item>
         <item name="cornerSizeBottomRight">12dp</item>
     </style>
+
+    <style name="CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/ic_checkbox</item>
+        <item name="android:padding">12dp</item>
+    </style>
 </resources>
