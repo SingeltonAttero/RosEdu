@@ -42,4 +42,17 @@
     <string name="common_ip_mask">Маска подсети</string>
     <string name="common_description">Описание</string>
     <string name="common_accept">Применить</string>
+    <string name="common_understand">Понятно</string>
+
+    <!--Descriptions-->
+    <string name="gcb_description">GOOSE CONTROL BLOCK</string>
+    <string name="mac_address_description">Mac адрес для мультикаст-рассылки</string>
+    <string name="max_time_description">Задается временной интервал между отправкой штатных GOOSE - сообщений</string>
+    <string name="min_time_description">Задается минимальное время между отправками дублирующих GOOSE - сообщений</string>
+    <string name="gooseId_description">Идентификатор GOOSE</string>
+    <string name="appId_description">Идентификатор приложения для GOOSE - сообщений действующих на отключение коммутационных аппаратов</string>
+    <string name="vlanId_description">Идентификатор виртуальной подсети VLAN ID</string>
+
+    <string name="ip_address_description">Идентификатор виртуальной подсети VLAN ID</string>
+    <string name="mask_description">Идентификатор виртуальной подсети VLAN ID</string>
 </resources>

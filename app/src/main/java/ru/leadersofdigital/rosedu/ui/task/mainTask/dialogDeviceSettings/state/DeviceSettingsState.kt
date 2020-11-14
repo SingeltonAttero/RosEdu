@@ -1,3 +1,7 @@
 package ru.leadersofdigital.rosedu.ui.task.mainTask.dialogDeviceSettings.state
 
-data class DeviceSettingsState(val text: String)
+import ru.leadersofdigital.rosedu.models.model.Device
+
+data class DeviceSettingsState(
+    val device: Device?
+)

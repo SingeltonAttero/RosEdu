@@ -3,6 +3,7 @@ package ru.leadersofdigital.rosedu.di
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import ru.leadersofdigital.rosedu.core.ResourceManager
+import ru.leadersofdigital.rosedu.models.MainTaskRepository
 import ru.leadersofdigital.rosedu.ui.auth.AuthViewModel
 import ru.leadersofdigital.rosedu.ui.auth.dialog.HelpViewModel
 import ru.leadersofdigital.rosedu.ui.device.DeviceViewModel
@@ -28,7 +29,7 @@ internal object GlobalModules {
         viewModel { TestTaskViewModel() }
         viewModel { HelpViewModel(get()) }
         viewModel { NetworkSettingsViewModel(get()) }
-        viewModel { DeviceSettingsViewModel(get()) }
+        viewModel { DeviceSettingsViewModel(get(), get()) }
         viewModel { DeviceViewModel(get()) }
     }
 
@@ -45,7 +46,7 @@ internal object GlobalModules {
     }
 
     private val modelsModule = module {
-
+        single { MainTaskRepository() }
     }
 
     val modules = listOf(
