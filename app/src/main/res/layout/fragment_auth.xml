@@ -61,17 +61,15 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_goneMarginTop="65dp"
                         app:startIconDrawable="@drawable/ic_person"
                         app:startIconTint="@color/colorPrimary">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextName"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="top|start"
+                            android:layout_height="match_parent"
                             android:imeOptions="actionNext"
-                            android:inputType="textCapSentences|textMultiLine"
+                            android:inputType="textCapSentences"
                             android:nextFocusDown="@id/editTextGroup"
                             android:singleLine="true" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +90,7 @@
                             android:id="@+id/editTextGroup"
                             android:singleLine="true"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="match_parent" />
                     </com.google.android.material.textfield.TextInputLayout>
 
 
