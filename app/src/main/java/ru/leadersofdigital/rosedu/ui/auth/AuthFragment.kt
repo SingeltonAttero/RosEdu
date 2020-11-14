@@ -22,7 +22,6 @@ class AuthFragment : BaseFragment<AuthState, AuthViewModel>(R.layout.fragment_au
     override val viewModel: AuthViewModel by viewModel()
 
     override fun renderState(state: AuthState) {
-        tvTestText.text = state.testText
-        frameLayoutContent.setOnClickListener { router.navigateTo(Screens.TasksSelectionScreen) }
+        buttonLogin.setOnClickListener { router.navigateTo(Screens.TasksSelectionScreen) }
     }
 }
