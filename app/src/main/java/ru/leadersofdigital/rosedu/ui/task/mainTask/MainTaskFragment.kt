@@ -83,9 +83,6 @@ class MainTaskFragment : BaseFragment<MainTaskState, MainTaskViewModel>(R.layout
                 true
             }
             if (scene.subDevice.type == TypeDevice.RZA) {
-                container.containerMenu.isVisible = true
-                container.ivMenuSetting.isVisible = true
-                container.ivMenuDelete.isVisible = true
                 container.ivMenuSetting.clicks {
                     viewModel.setDeviceSelected(scene.subDevice.id, scene.subDevice.type)
                     NetworkSettingsDialogFragment.newInstance().show(childFragmentManager, null)
@@ -97,11 +94,21 @@ class MainTaskFragment : BaseFragment<MainTaskState, MainTaskViewModel>(R.layout
                     viewModel.handleDeleteScene(scene.subDevice.id)
                 }
             } else if (scene.subDevice.type == TypeDevice.INDUSTRIAL_SWITCHES) {
-                container.clicks {
+
+                container.ivMenuDelete.clicks {
+                    viewModel.handleDeleteScene(scene.subDevice.id)
+                }
+
+                container.ivMenuSetting.clicks {
                     viewModel.setDeviceSelected(scene.subDevice.id, scene.subDevice.type)
                     DeviceSettingsDialogFragment.newInstance().show(childFragmentManager, null)
                 }
-
+            }
+            container.ivMenuSetting.isVisible = scene.isSelected
+            container.ivMenuDelete.isVisible = scene.isSelected
+            container.containerMenu.isVisible = scene.isSelected
+            container.clicks {
+               viewModel.selectScene(scene.subDevice.id)
             }
         }
     }

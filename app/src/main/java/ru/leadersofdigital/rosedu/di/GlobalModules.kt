@@ -28,7 +28,7 @@ internal object GlobalModules {
         viewModel { MainTaskViewModel(get()) }
         viewModel { TestTaskViewModel() }
         viewModel { HelpViewModel(get()) }
-        viewModel { NetworkSettingsViewModel(get()) }
+        viewModel { NetworkSettingsViewModel(get(), get()) }
         viewModel { DeviceSettingsViewModel(get(), get()) }
         viewModel { DeviceViewModel(get()) }
     }
