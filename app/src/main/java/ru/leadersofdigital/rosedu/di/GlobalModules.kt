@@ -25,7 +25,7 @@ internal object GlobalModules {
         viewModel { AuthViewModel(resourceManager = get()) }
         viewModel { TasksSelectionViewModel() }
         viewModel { TaskFlowViewModel() }
-        viewModel { MainTaskViewModel() }
+        viewModel { MainTaskViewModel(get()) }
         viewModel { TestTaskViewModel() }
         viewModel { HelpViewModel(get()) }
         viewModel { NetworkSettingsViewModel(get()) }

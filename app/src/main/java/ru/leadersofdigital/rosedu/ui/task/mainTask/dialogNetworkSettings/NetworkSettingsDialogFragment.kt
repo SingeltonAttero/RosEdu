@@ -20,12 +20,25 @@ class NetworkSettingsDialogFragment : BaseDialogFragment<NetworkSettingsState, N
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        buttonApply.setOnClickListener {
+            viewModel.onButtonSaveClick(
+                editTextIpAddress.text.toString(),
+                editTextIpMask.text.toString()
+            )
+            dismiss()
+        }
+
         buttonIpAddressDesc.setOnClickListener { showDescriptionAlert(R.string.common_ip_address, R.string.ip_address_description) }
         buttonIpMaskDesc.setOnClickListener { showDescriptionAlert(R.string.common_ip_mask, R.string.mask_description) }
     }
 
     override fun renderState(state: NetworkSettingsState) {
-        textViewDeviceTitle.text = state.deviceTitle
-        textViewDeviceType.text = state.deviceType
+        state.device?.let {
+            textViewDeviceTitle.text = it.name
+            textViewDeviceType.text = it.type.name
+            editTextIpAddress.setText(it.ipAddress)
+            editTextIpMask.setText(it.networkMask)
+        }
+
     }
 }

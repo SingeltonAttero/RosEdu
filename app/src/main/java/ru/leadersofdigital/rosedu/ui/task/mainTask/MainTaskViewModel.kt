@@ -2,11 +2,12 @@ package ru.leadersofdigital.rosedu.ui.task.mainTask
 
 import ru.leadersofdigital.rosedu.core.BaseViewModel
 import ru.leadersofdigital.rosedu.models.DataSourceDevice
+import ru.leadersofdigital.rosedu.models.MainTaskRepository
 import ru.leadersofdigital.rosedu.models.model.TypeDevice
 import ru.leadersofdigital.rosedu.ui.task.mainTask.state.MainTaskState
 import ru.leadersofdigital.rosedu.ui.task.mainTask.state.SceneState
 
-class MainTaskViewModel : BaseViewModel<MainTaskState>(MainTaskState(listOf())) {
+class MainTaskViewModel(private val mainTaskRepository: MainTaskRepository) : BaseViewModel<MainTaskState>(MainTaskState(listOf())) {
 
     companion object {
         private const val MAX_WIDTH = 480
@@ -40,6 +41,7 @@ class MainTaskViewModel : BaseViewModel<MainTaskState>(MainTaskState(listOf())) 
                     positionY = y - ((MAX_HEIGHT * scale).toInt() / 2)
                 )
             )
+            mainTaskRepository.addDevice(subDevice)
             updateState(
                 currentState.copy(
                     itemScenes = toMutableList
@@ -50,10 +52,15 @@ class MainTaskViewModel : BaseViewModel<MainTaskState>(MainTaskState(listOf())) 
     }
 
     fun handleDeleteScene(id: Int) {
+        mainTaskRepository.deleteDevice(id)
         updateState(
             currentState.copy(
                 itemScenes = currentState.itemScenes.filter { it.subDevice.id != id }
             )
         )
+    }
+
+    fun setDeviceSelected(id: Int, typeDevice: TypeDevice) {
+        mainTaskRepository.setSelectedDevice(id)
     }
 }

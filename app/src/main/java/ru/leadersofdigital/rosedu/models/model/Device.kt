@@ -9,6 +9,14 @@ data class Device(
     val listSubDevice: List<SubDevice>,
     val type: TypeDevice,
 
+
+
+)
+
+data class SubDevice(
+    val id: Int,
+    val name: String,
+    val type: TypeDevice,
     val macAddress: String? = null,
     val gcbName: String? = null,
     val maxTime: String? = null,
@@ -19,13 +27,6 @@ data class Device(
 
     val ipAddress: String? = null,
     val networkMask: String? = null,
-
-)
-
-data class SubDevice(
-    val id: Int,
-    val name: String,
-    val type: TypeDevice
 )
 
 enum class TypeDevice(@DrawableRes val resImage: Int) {

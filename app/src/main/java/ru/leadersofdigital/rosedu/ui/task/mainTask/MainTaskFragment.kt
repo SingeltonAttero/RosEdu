@@ -87,6 +87,7 @@ class MainTaskFragment : BaseFragment<MainTaskState, MainTaskViewModel>(R.layout
                 container.ivMenuSetting.isVisible = true
                 container.ivMenuDelete.isVisible = true
                 container.ivMenuSetting.clicks {
+                    viewModel.setDeviceSelected(scene.subDevice.id, scene.subDevice.type)
                     NetworkSettingsDialogFragment.newInstance().show(childFragmentManager, null)
                 }
                 container.ivMenuConnection.clicks {
@@ -97,6 +98,7 @@ class MainTaskFragment : BaseFragment<MainTaskState, MainTaskViewModel>(R.layout
                 }
             } else if (scene.subDevice.type == TypeDevice.INDUSTRIAL_SWITCHES) {
                 container.clicks {
+                    viewModel.setDeviceSelected(scene.subDevice.id, scene.subDevice.type)
                     DeviceSettingsDialogFragment.newInstance().show(childFragmentManager, null)
                 }
 

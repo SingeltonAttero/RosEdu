@@ -34,30 +34,30 @@
                 android:id="@+id/divider1"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="12dp"
                 android:background="@color/divider_color"
                 app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+            <ImageView
+                android:id="@+id/imageViewCommutator"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_relay_group_rsa"
 
+                app:layout_constraintBottom_toBottomOf="@+id/view"
+                app:layout_constraintEnd_toEndOf="@+id/view"
+                app:layout_constraintStart_toStartOf="@+id/view"
+                app:layout_constraintTop_toTopOf="@+id/view" />
             <View
                 android:id="@+id/view"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="18dp"
                 android:background="@drawable/bg_light_blue_circle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
-            <ImageView
-                android:id="@+id/imageViewCommutator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_commutator"
 
-                app:layout_constraintBottom_toBottomOf="@+id/view"
-                app:layout_constraintEnd_toEndOf="@+id/view"
-                app:layout_constraintStart_toStartOf="@+id/view"
-                app:layout_constraintTop_toTopOf="@+id/view" />
 
             <LinearLayout
                 android:id="@+id/linear"
@@ -128,10 +128,9 @@
                 android:id="@+id/buttonIpAddressDesc"
                 style="@style/CustomButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginEnd="60dp"
                 android:text="@string/common_description"
-
                 app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
@@ -150,7 +149,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="42dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="42dp"
                 android:hint="@string/common_ip_mask"
                 app:layout_constraintEnd_toStartOf="@+id/buttonIpAddressDesc"
@@ -173,7 +172,7 @@
                 android:id="@+id/buttonIpMaskDesc"
                 style="@style/CustomButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginEnd="60dp"
                 android:backgroundTint="#2196F3"
                 android:text="@string/common_description"
@@ -182,13 +181,14 @@
                 app:layout_constraintTop_toTopOf="@+id/textInputLayout2" />
 
             <Button
+                android:id="@+id/buttonApply"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:paddingStart="32dp"
-                android:paddingTop="16dp"
-                android:paddingEnd="32dp"
-                android:paddingBottom="16dp"
+                android:layout_marginTop="24dp"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
                 android:text="@string/common_accept"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
