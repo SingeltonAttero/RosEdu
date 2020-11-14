@@ -3,7 +3,11 @@ package ru.leadersofdigital.rosedu.di
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import ru.leadersofdigital.rosedu.core.ResourceManager
-import ru.leadersofdigital.rosedu.ui.main.MainViewModel
+import ru.leadersofdigital.rosedu.ui.auth.AuthViewModel
+import ru.leadersofdigital.rosedu.ui.task.TaskFlowViewModel
+import ru.leadersofdigital.rosedu.ui.task.mainTask.MainTaskViewModel
+import ru.leadersofdigital.rosedu.ui.task.testTask.TestTaskViewModel
+import ru.leadersofdigital.rosedu.ui.tasksSelection.TasksSelectionViewModel
 import ru.terrakok.cicerone.Cicerone
 
 internal object GlobalModules {
@@ -13,13 +17,24 @@ internal object GlobalModules {
     }
 
     private val viewModelModule = module {
-        viewModel { MainViewModel(resourceManager = get()) }
+        viewModel { AuthViewModel(resourceManager = get()) }
+        viewModel { TasksSelectionViewModel() }
+        viewModel { TaskFlowViewModel() }
+        viewModel { MainTaskViewModel() }
+        viewModel { TestTaskViewModel() }
+
     }
 
     private val navigationModule = module {
         val global = Cicerone.create()
         single { global.navigatorHolder }
         single { global.router }
+
+        scope(Qualifiers.TASK_FLOW_SESSION) {
+            val taskFlowRouter = Cicerone.create()
+            scoped { taskFlowRouter.router }
+            scoped { taskFlowRouter.navigatorHolder }
+        }
     }
 
     private val modelsModule = module {

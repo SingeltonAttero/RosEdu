@@ -1,11 +1,11 @@
-package ru.leadersofdigital.rosedu.ui.main
+package ru.leadersofdigital.rosedu.ui.auth
 
 import ru.leadersofdigital.rosedu.R
 import ru.leadersofdigital.rosedu.core.BaseViewModel
 import ru.leadersofdigital.rosedu.core.ResourceManager
-import ru.leadersofdigital.rosedu.ui.main.state.MainState
+import ru.leadersofdigital.rosedu.ui.auth.state.AuthState
 
-class MainViewModel(private val resourceManager: ResourceManager) : BaseViewModel<MainState>(MainState("")) {
+class AuthViewModel(private val resourceManager: ResourceManager) : BaseViewModel<AuthState>(AuthState("")) {
 
     init {
         updateState(

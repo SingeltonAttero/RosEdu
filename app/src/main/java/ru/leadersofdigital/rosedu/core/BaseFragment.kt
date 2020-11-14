@@ -5,7 +5,8 @@ import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 
-abstract class BaseFragment<ST, VM : BaseViewModel<ST>>(@LayoutRes layoutRes: Int) : Fragment(layoutRes) {
+abstract class BaseFragment<ST, VM : BaseViewModel<ST>>(@LayoutRes layoutRes: Int) :
+    Fragment(layoutRes) {
     abstract val viewModel: VM
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -16,4 +17,6 @@ abstract class BaseFragment<ST, VM : BaseViewModel<ST>>(@LayoutRes layoutRes: In
     }
 
     abstract fun renderState(state: ST)
+
+    open fun onBackPressed() {}
 }
