@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="130dp"
+                android:layout_marginTop="30dp"
                 android:src="@drawable/logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +35,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 app:cardCornerRadius="12dp"
+                app:cardElevation="12dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_gravity="center_horizontal"
                 app:layout_constraintEnd_toEndOf="@+id/imageView"
                 app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -53,7 +56,7 @@
                         android:layout_marginStart="65dp"
                         android:layout_marginEnd="65dp"
                         android:layout_marginTop="65dp"
-                        android:hint="Введите ФИО"
+                        android:hint="@string/auth_fio_hint"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -68,7 +71,8 @@
                             android:gravity="top|start"
                             android:imeOptions="actionNext"
                             android:inputType="textCapSentences|textMultiLine"
-                            android:maxLines="1" />
+                            android:nextFocusDown="@id/editTextGroup"
+                            android:singleLine="true" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -79,12 +83,13 @@
                         app:startIconDrawable="@drawable/ic_group_add"
                         app:startIconTint="@color/colorPrimary"
                         android:layout_marginTop="30dp"
-                        android:hint="Номер учебной группы"
+                        android:hint="@string/auth_group_hint"
                         app:layout_constraintStart_toStartOf="@+id/textInputLayout"
                         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextGroup"
+                            android:singleLine="true"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -95,7 +100,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="40dp"
-                        android:text="Войти"
+                        android:text="@string/auth_login"
                         android:paddingTop="16dp"
                         android:paddingBottom="16dp"
                         android:paddingEnd="32dp"
@@ -111,7 +116,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Не знаю что делать"
+                        android:text="@string/auth_dont_know"
                         android:textAllCaps="true"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

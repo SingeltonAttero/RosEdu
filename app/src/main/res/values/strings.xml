@@ -6,4 +6,10 @@
         2. В поле “Номер учебной группы”  введите номер группы куда вас зачислили.\n
         3. Нажмите ‘ВОЙТИ”
 </string>
+
+<!--Auth-->
+    <string name="auth_fio_hint">Введите ФИО</string>
+    <string name="auth_group_hint">Номер учебной группы</string>
+    <string name="auth_login">Войти</string>
+    <string name="auth_dont_know">Не знаю что делать</string>
 </resources>
