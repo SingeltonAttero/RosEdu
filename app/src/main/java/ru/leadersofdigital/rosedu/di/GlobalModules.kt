@@ -7,6 +7,7 @@ import ru.leadersofdigital.rosedu.ui.auth.AuthViewModel
 import ru.leadersofdigital.rosedu.ui.auth.dialog.HelpViewModel
 import ru.leadersofdigital.rosedu.ui.task.TaskFlowViewModel
 import ru.leadersofdigital.rosedu.ui.task.mainTask.MainTaskViewModel
+import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogDeviceSettings.DeviceSettingsViewModel
 import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogNetworkSettings.NetworkSettingsViewModel
 import ru.leadersofdigital.rosedu.ui.task.testTask.TestTaskViewModel
 import ru.leadersofdigital.rosedu.ui.tasksSelection.TasksSelectionViewModel
@@ -26,6 +27,7 @@ internal object GlobalModules {
         viewModel { TestTaskViewModel() }
         viewModel { HelpViewModel(get()) }
         viewModel { NetworkSettingsViewModel(get()) }
+        viewModel { DeviceSettingsViewModel(get()) }
     }
 
     private val navigationModule = module {

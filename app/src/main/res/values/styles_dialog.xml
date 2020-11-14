@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DialogTheme" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="android:windowMinWidthMajor">80%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+        <item name="windowFixedHeightMajor">80%</item>
+        <item name="windowFixedHeightMinor">80%</item>
+    </style>
+
+    <style name="AlmostFullScreenDialog" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="android:windowMinWidthMajor">99%</item>
+        <item name="android:windowMinWidthMinor">99%</item>
+        <item name="windowFixedHeightMajor">99%</item>
+        <item name="windowFixedHeightMinor">99%</item>
+    </style>
+</resources>

@@ -14,11 +14,23 @@
     <string name="auth_dont_know">Не знаю что делать</string>
 
     <!--Main Task-->
+    <string name="device_title">Устройство: %s</string>
+    <string name="device_type">Тип: %s</string>
 
     <!--Main Task Network Settings-->
     <string name="network_settings_title">Сетевые настройки</string>
-    <string name="network_settings_device_title">Устройство: %s</string>
-    <string name="network_settings_device_type">Тип: %s</string>
+
+
+    <!--Main Task Device Settings-->
+    <string name="device_settings_title">Настройки устройства</string>
+
+    <string name="device_settings_gcb_name">Имя GCB</string>
+    <string name="device_settings_mac_address">MAC адрес</string>
+    <string name="device_settings_max_time">Max Time</string>
+    <string name="device_settings_min_time">Min Time</string>
+    <string name="device_settings_goose_id">GOOSE ID</string>
+    <string name="device_settings_app_id">APP ID</string>
+    <string name="device_settings_vlan_id">VLAN ID</string>
 
 
     <!--Common-->

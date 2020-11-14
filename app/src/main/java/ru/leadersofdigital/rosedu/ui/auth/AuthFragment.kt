@@ -10,6 +10,7 @@ import ru.leadersofdigital.rosedu.core.BaseFragment
 import ru.leadersofdigital.rosedu.ui.Screens
 import ru.leadersofdigital.rosedu.ui.auth.dialog.HelpDialogFragment
 import ru.leadersofdigital.rosedu.ui.auth.state.AuthState
+import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogDeviceSettings.DeviceSettingsDialogFragment
 import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogNetworkSettings.NetworkSettingsDialogFragment
 import ru.terrakok.cicerone.Router
 

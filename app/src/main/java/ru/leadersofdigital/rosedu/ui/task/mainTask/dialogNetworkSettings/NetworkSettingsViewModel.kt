@@ -10,8 +10,8 @@ class NetworkSettingsViewModel(resourceManager: ResourceManager) :
     init {
         updateState(
             NetworkSettingsState(
-                resourceManager.getString(R.string.network_settings_device_title, "Test"),
-                resourceManager.getString(R.string.network_settings_device_type, "Test type")
+                resourceManager.getString(R.string.device_title, "Test"),
+                resourceManager.getString(R.string.device_type, "Test type")
         )
         )
     }

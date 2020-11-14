@@ -9,7 +9,6 @@ import ru.leadersofdigital.rosedu.R
 class NetworkSettingsDialogFragment : BaseDialogFragment<NetworkSettingsState, NetworkSettingsViewModel>() {
 
     override val viewModel: NetworkSettingsViewModel by viewModel()
-
     override val layoutRes: Int = R.layout.dialog_main_task_network_settings
 
     companion object {
