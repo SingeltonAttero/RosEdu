@@ -12,4 +12,6 @@
     <string name="auth_group_hint">Номер учебной группы</string>
     <string name="auth_login">Войти</string>
     <string name="auth_dont_know">Не знаю что делать</string>
+    <string name="toolbar_ied_goose_title">Настройка IED на прием-передачу GOOSE сообщений</string>
+    <string name="select_device_title">Выберите устройства</string>
 </resources>

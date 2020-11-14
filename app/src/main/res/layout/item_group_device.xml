@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivIconDevice"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/bg_item_group_device"
+        app:srcCompat="@drawable/ic_relay_group_rsa" />
+
+    <TextView
+        android:id="@+id/tvTitleGroupDevice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        tools:text="@string/help_title" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivOpenSubList"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_expand_group" />
+
+</LinearLayout>
