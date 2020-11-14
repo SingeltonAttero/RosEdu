@@ -5,6 +5,7 @@ import org.koin.dsl.module
 import ru.leadersofdigital.rosedu.core.ResourceManager
 import ru.leadersofdigital.rosedu.ui.auth.AuthViewModel
 import ru.leadersofdigital.rosedu.ui.auth.dialog.HelpViewModel
+import ru.leadersofdigital.rosedu.ui.device.DeviceViewModel
 import ru.leadersofdigital.rosedu.ui.task.TaskFlowViewModel
 import ru.leadersofdigital.rosedu.ui.task.mainTask.MainTaskViewModel
 import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogDeviceSettings.DeviceSettingsViewModel
@@ -28,6 +29,7 @@ internal object GlobalModules {
         viewModel { HelpViewModel(get()) }
         viewModel { NetworkSettingsViewModel(get()) }
         viewModel { DeviceSettingsViewModel(get()) }
+        viewModel { DeviceViewModel(get()) }
     }
 
     private val navigationModule = module {
