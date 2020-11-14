@@ -34,8 +34,8 @@ class NetworkSettingsDialogFragment : BaseDialogFragment<NetworkSettingsState, N
 
     override fun renderState(state: NetworkSettingsState) {
         state.device?.let {
-            textViewDeviceTitle.text = it.name
-            textViewDeviceType.text = it.type.name
+            textViewDeviceTitle.text =  resources.getString(R.string.device_title,it.name)
+            textViewDeviceType.text = resources.getString(R.string.device_type,it.type.name)
             editTextIpAddress.setText(it.ipAddress)
             editTextIpMask.setText(it.networkMask)
         }
