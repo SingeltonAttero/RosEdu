@@ -4,6 +4,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import ru.leadersofdigital.rosedu.core.ResourceManager
 import ru.leadersofdigital.rosedu.ui.auth.AuthViewModel
+import ru.leadersofdigital.rosedu.ui.auth.dialog.HelpViewModel
 import ru.leadersofdigital.rosedu.ui.task.TaskFlowViewModel
 import ru.leadersofdigital.rosedu.ui.task.mainTask.MainTaskViewModel
 import ru.leadersofdigital.rosedu.ui.task.testTask.TestTaskViewModel
@@ -22,7 +23,7 @@ internal object GlobalModules {
         viewModel { TaskFlowViewModel() }
         viewModel { MainTaskViewModel() }
         viewModel { TestTaskViewModel() }
-
+        viewModel { HelpViewModel(get()) }
     }
 
     private val navigationModule = module {
