@@ -25,6 +25,9 @@
 --------
 
 ### Демонстрация работы
+Авторизация пользователя
+
+![Auth](https://github.com/askont/RosEdu/blob/master/image/auth.png)
 
 ### Стек технологий 
 * Kotlin
