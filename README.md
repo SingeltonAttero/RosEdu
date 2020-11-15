@@ -3,7 +3,7 @@
 
 --------
 
-#####Чтобы успешно пройти задание, пользователь должен выполнить все настройки устройств и соединить их между собой, а приложение самостоятельно проверит правильность настройки. Для оценки знаний после прохождения задания запускается тест.
+##### Чтобы успешно пройти задание, пользователь должен выполнить все настройки устройств и соединить их между собой, а приложение самостоятельно проверит правильность настройки. Для оценки знаний после прохождения задания запускается тест.
 
 --------
 
@@ -25,10 +25,24 @@
 --------
 
 ### Демонстрация работы
-Авторизация пользователя
+* Авторизация пользователя
 
 ![Auth](https://github.com/askont/RosEdu/blob/master/image/auth.png)
 
+* Настройка карты подключения с помощью простого меню
+
+![setting_connection_open_menu](https://github.com/askont/RosEdu/blob/master/image/setting_connection_open_menu.png)
+![setting_connection_device](https://github.com/askont/RosEdu/blob/master/image/setting_connection_device.png)
+ 
+* Настройки коммутатора
+  
+  ![setting_switcher_1](https://github.com/askont/RosEdu/blob/master/image/setting_switcher_1.png)
+  
+* Настройка устройства 
+
+![setting_device_1](https://github.com/askont/RosEdu/blob/master/image/setting_device_1.png)
+
+  
 ### Стек технологий 
 * Kotlin
 * Gradle
