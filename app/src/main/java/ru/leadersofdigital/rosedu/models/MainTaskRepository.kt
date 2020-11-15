@@ -1,5 +1,6 @@
 package ru.leadersofdigital.rosedu.models
 
+import ru.leadersofdigital.rosedu.core.validator.Validator
 import ru.leadersofdigital.rosedu.models.model.GooseConnections
 import ru.leadersofdigital.rosedu.models.model.Quiz
 import ru.leadersofdigital.rosedu.models.model.SubDevice
@@ -35,5 +36,9 @@ class MainTaskRepository {
 
     fun updateQuizAnswers(items: List<Quiz>) {
         quizList = items.toMutableList()
+    }
+
+    fun validateAll() {
+        Validator.validateAll(deviceList, gooseConnections, quizList)
     }
 }
