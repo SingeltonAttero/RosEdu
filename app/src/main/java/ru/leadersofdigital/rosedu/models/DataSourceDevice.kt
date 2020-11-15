@@ -28,13 +28,13 @@ object DataSourceDevice {
                 SubDevice(31, "Витая пара", TypeDevice.CONNECTION, typeConnection = TypeConnection.TWISTED_PAIR),
                 SubDevice(
                     32,
-                    "оптоволоконного кабель{одномод.}",
+                    "Оптоволоконный кабель{одномод.}",
                     TypeDevice.CONNECTION,
                     typeConnection = TypeConnection.OPTICAL_FIBER_O
                 ),
                 SubDevice(
                     33,
-                    "оптоволоконного кабель {многомод.}",
+                    "Оптоволоконный кабель {многомод.}",
                     TypeDevice.CONNECTION,
                     typeConnection = TypeConnection.OPTICAL_FIBER_M
                 ),
