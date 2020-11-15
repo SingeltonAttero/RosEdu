@@ -53,13 +53,13 @@ interface ValidationWorker {
 
 class IpAddressValidator(private val field: String?) : ValidationWorker {
     override fun validate(): Boolean {
-        return !field.isNullOrEmpty() && !field.matches("^([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\$".toRegex())
+        return !field.isNullOrEmpty() && field.matches("^([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\$".toRegex())
     }
 }
 
 class MaskValidator(private val field: String?) : ValidationWorker {
     override fun validate(): Boolean {
-        return !field.isNullOrEmpty() && !field.matches("^([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\$".toRegex())
+        return !field.isNullOrEmpty() && field.matches("^([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\$".toRegex())
     }
 }
 
