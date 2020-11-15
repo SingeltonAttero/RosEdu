@@ -24,7 +24,7 @@ object Screens {
         override fun getFragment(): Fragment = MainTaskFragment.newInstance()
     }
 
-    object TestTaskScreen : SupportAppScreen() {
+    object QuizScreen : SupportAppScreen() {
         override fun getFragment(): Fragment = QuizFragment.newInstance()
     }
 

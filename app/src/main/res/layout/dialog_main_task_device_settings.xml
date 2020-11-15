@@ -54,7 +54,7 @@
                 android:id="@+id/imageViewCommutator"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_commutator"
+                android:src="@drawable/ic_relay_group_rsa"
 
                 app:layout_constraintBottom_toBottomOf="@+id/view"
                 app:layout_constraintEnd_toEndOf="@+id/view"

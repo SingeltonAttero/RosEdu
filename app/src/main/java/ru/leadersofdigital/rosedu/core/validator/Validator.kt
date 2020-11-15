@@ -12,7 +12,7 @@ object Validator {
         quizList: List<Quiz>
     ): ValidationResult {
         val deviceStatuses = devices.map { validateDevice(it) }
-        val gooseConnectionStatus =  GooseValidator(gooseConnections).validate()
+        val gooseConnectionStatus = GooseValidator(gooseConnections).validate()
         val answeredQuizes = quizList.count { it.isValid() }
         val notAnsweredQuizes = quizList.count { !it.isValid() }
         val quizStatus =
@@ -30,8 +30,10 @@ object Validator {
             }
             TypeDevice.INDUSTRIAL_SWITCHES -> if (runValidation(
                     listOf(
-                        IpAddressValidator(device.ipAddress),
-                        MaskValidator(device.networkMask)
+                        IpAddressValidator(device.ipAddress1),
+                        IpAddressValidator(device.ipAddress2),
+                        MaskValidator(device.networkMask1),
+                        MaskValidator(device.networkMask2)
                     )
                 )
             )
@@ -63,12 +65,12 @@ class MaskValidator(private val field: String?) : ValidationWorker {
 
 class GooseValidator(private val gooseConnections: GooseConnections) : ValidationWorker {
     override fun validate(): Boolean =
-        gooseConnections.ied1Enter1.count { it } <=1 &&
-                gooseConnections.ied1Enter2.count { it } <=1 &&
-                gooseConnections.ied1Enter3.count { it } <=1 &&
-                gooseConnections.ied2Enter1.count { it } <=1 &&
-                gooseConnections.ied2Enter2.count { it } <=1 &&
-                gooseConnections.ied2Enter3.count { it } <=1
+        gooseConnections.ied1Enter1.count { it } <= 1 &&
+                gooseConnections.ied1Enter2.count { it } <= 1 &&
+                gooseConnections.ied1Enter3.count { it } <= 1 &&
+                gooseConnections.ied2Enter1.count { it } <= 1 &&
+                gooseConnections.ied2Enter2.count { it } <= 1 &&
+                gooseConnections.ied2Enter3.count { it } <= 1
 }
 
 sealed class Status {
@@ -77,4 +79,18 @@ sealed class Status {
     data class QuizError(val answeredQuizes: Int, val totalQuizes: Int) : Status()
 }
 
-data class ValidationResult(val deviceStatuses: List<Status>, val gooseConnectionStatus: Boolean, val quizStatus: Status)
+data class ValidationResult(
+    val deviceStatuses: List<Status>,
+    val gooseConnectionStatus: Boolean,
+    val quizStatus: Status
+) {
+    override fun toString(): String {
+        val errors =
+            deviceStatuses.filter { it is Status.DevicesError }.map { it as Status.DevicesError }
+        var result =
+            if (errors.isNotEmpty()) "Ошибки в настройке устройств: ${errors.size}\n" else "Устройства настроены успешно"
+        result += if (gooseConnectionStatus) "Настройке подписки GOOSE - сообщений успешно настроена" else "Ошибки в настройке подписки GOOSE - сообщений\n"
+        result += if (quizStatus is Status.QuizError) "Ошибок в тесте ${quizStatus.totalQuizes - quizStatus.answeredQuizes}/${quizStatus.totalQuizes}" else "тест пройден успешно"
+        return result
+    }
+}

@@ -1,14 +1,12 @@
 package ru.leadersofdigital.rosedu.ui.task.testTask
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import ru.leadersofdigital.rosedu.core.BaseViewModel
-import ru.leadersofdigital.rosedu.models.DataSourceQuiz
 import ru.leadersofdigital.rosedu.models.MainTaskRepository
 import ru.leadersofdigital.rosedu.models.model.Quiz
 import ru.leadersofdigital.rosedu.ui.task.testTask.state.QuizState
 
-class QuizViewModel(private val mainTaskRepository: MainTaskRepository) : BaseViewModel<QuizState>(QuizState("", listOf())) {
+class QuizViewModel(private val mainTaskRepository: MainTaskRepository) : BaseViewModel<QuizState>(QuizState("", listOf(),"")) {
 
     val shot: MutableLiveData<String> = MutableLiveData<String>()
 
@@ -16,7 +14,8 @@ class QuizViewModel(private val mainTaskRepository: MainTaskRepository) : BaseVi
         updateState(
             currentState.copy(
                 title = "",
-                listTests = mainTaskRepository.getQuizList()
+                listTests = mainTaskRepository.getQuizList(),
+                ""
             )
         )
     }
@@ -31,6 +30,9 @@ class QuizViewModel(private val mainTaskRepository: MainTaskRepository) : BaseVi
         }
         shot.value = "$countValid/$countMax"
         mainTaskRepository.updateQuizAnswers(currentState.listTests)
+
+        val result = mainTaskRepository.validateAll().toString()
+        updateState(currentState.copy(result = result))
     }
 
     fun handleClickGroup(item: Quiz) {
@@ -46,7 +48,7 @@ class QuizViewModel(private val mainTaskRepository: MainTaskRepository) : BaseVi
                             }
                         }
                 }
-                updateState(currentState.copy(listTests = items))
+                updateState(currentState.copy(listTests = items, result = ""))
             }
         }
     }

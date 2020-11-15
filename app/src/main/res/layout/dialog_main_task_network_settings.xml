@@ -22,10 +22,10 @@
                 android:id="@+id/textViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="12dp"
                 android:text="@string/network_settings_title"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -39,25 +39,22 @@
                 app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
             <ImageView
                 android:id="@+id/imageViewCommutator"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_relay_group_rsa"
-
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_commutator"
                 app:layout_constraintBottom_toBottomOf="@+id/view"
                 app:layout_constraintEnd_toEndOf="@+id/view"
                 app:layout_constraintStart_toStartOf="@+id/view"
                 app:layout_constraintTop_toTopOf="@+id/view" />
             <View
                 android:id="@+id/view"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="18dp"
                 android:background="@drawable/bg_light_blue_circle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider1" />
-
-
 
             <LinearLayout
                 android:id="@+id/linear"
@@ -75,7 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     tools:text="Устройство: Пром коммут" />
 
                 <TextView
@@ -84,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:textColor="#8A000000"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="@+id/view"
                     app:layout_constraintStart_toEndOf="@+id/view"
                     app:layout_constraintTop_toBottomOf="@+id/textViewDeviceTitle"
@@ -100,7 +97,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout"
+                android:id="@+id/textInputLayoutAddress"
                 style="@style/TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -119,7 +116,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:imeOptions="actionNext"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:nextFocusDown="@id/editTextIpMask"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -128,12 +125,12 @@
                 android:id="@+id/buttonIpAddressDesc"
                 style="@style/CustomButton"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="25dp"
                 android:layout_marginEnd="60dp"
                 android:text="@string/common_description"
-                app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+                app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutAddress"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
+                app:layout_constraintTop_toTopOf="@+id/textInputLayoutAddress" />
 
             <View
                 android:id="@+id/divider3"
@@ -141,10 +138,10 @@
                 android:layout_height="2dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/divider_color"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutAddress" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout2"
+                android:id="@+id/textInputLayoutMask"
                 style="@style/TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -162,9 +159,9 @@
                     android:id="@+id/editTextIpMask"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:imeOptions="actionDone"
-                    android:inputType="number"
-                    android:nextFocusDown="@id/editTextGroup"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:nextFocusDown="@id/editTextIpAddress2"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -172,13 +169,167 @@
                 android:id="@+id/buttonIpMaskDesc"
                 style="@style/CustomButton"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="25dp"
                 android:layout_marginEnd="60dp"
                 android:backgroundTint="#2196F3"
                 android:text="@string/common_description"
-                app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+                app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutMask"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textInputLayout2" />
+                app:layout_constraintTop_toTopOf="@+id/textInputLayoutMask" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/divider_color"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutMask" />
+
+            <ImageView
+                android:id="@+id/imageViewCommutator2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_commutator"
+
+                app:layout_constraintBottom_toBottomOf="@+id/view2"
+                app:layout_constraintEnd_toEndOf="@+id/view2"
+                app:layout_constraintStart_toStartOf="@+id/view2"
+                app:layout_constraintTop_toTopOf="@+id/view2" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_light_blue_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+
+
+            <LinearLayout
+                android:id="@+id/linear2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:orientation="vertical"
+
+                app:layout_constraintBottom_toBottomOf="@+id/view2"
+                app:layout_constraintStart_toEndOf="@+id/view2"
+                app:layout_constraintTop_toTopOf="@+id/view2">
+
+                <TextView
+                    android:id="@+id/textViewDeviceTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:text="Устройство: Пром коммут" />
+
+                <TextView
+                    android:id="@+id/textViewDeviceType2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="#8A000000"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view2"
+                    app:layout_constraintStart_toEndOf="@+id/view2"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewDeviceTitle2"
+                    tools:text="Устройство: Пром коммут" />
+            </LinearLayout>
+
+
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/divider_color"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutAddress2"
+                style="@style/TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="42dp"
+                android:hint="@string/common_ip_address"
+                app:layout_constraintEnd_toStartOf="@+id/buttonIpAddressDesc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider5"
+                app:startIconDrawable="@drawable/ic_ip_address"
+                app:startIconTint="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextIpAddress2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:nextFocusDown="@id/editTextIpMask2"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/buttonIpAddressDesc2"
+                style="@style/CustomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginEnd="60dp"
+                android:text="@string/common_description"
+                app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutAddress2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textInputLayoutAddress2" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/divider_color"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutAddress2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutMask2"
+                style="@style/TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="42dp"
+                android:hint="@string/common_ip_mask"
+                app:layout_constraintEnd_toStartOf="@+id/buttonIpAddressDesc2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider6"
+                app:startIconDrawable="@drawable/ic_cast_connected"
+                app:startIconTint="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextIpMask2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:nextFocusDown="@id/editTextGroup"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonIpMaskDesc2"
+                style="@style/CustomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginEnd="60dp"
+                android:backgroundTint="#2196F3"
+                android:text="@string/common_description"
+                app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutMask2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textInputLayoutMask2" />
 
             <Button
                 android:id="@+id/buttonApply"
@@ -192,7 +343,7 @@
                 android:text="@string/common_accept"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutMask2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

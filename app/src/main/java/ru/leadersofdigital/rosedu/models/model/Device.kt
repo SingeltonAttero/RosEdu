@@ -21,8 +21,10 @@ data class SubDevice(
     val gooseId: String? = null,
     val appId: String? = null,
     val vlanId: String? = null,
-    val ipAddress: String? = null,
-    val networkMask: String? = null,
+    val ipAddress1: String? = null,
+    val networkMask1: String? = null,
+    val ipAddress2: String? = null,
+    val networkMask2: String? = null,
     val typeConnection: TypeConnection = TypeConnection.TWISTED_PAIR
 )
 

@@ -3,6 +3,7 @@ package ru.leadersofdigital.rosedu.ui.task.testTask
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.fragment_test_task.*
 import org.koin.android.ext.android.getKoin
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -39,7 +40,6 @@ class QuizFragment : BaseFragment<QuizState, QuizViewModel>(R.layout.fragment_te
         )
         buttonFinish.setOnClickListener {
             viewModel.finishQuiz()
-            onBackPressed()
         }
     }
 
@@ -55,6 +55,11 @@ class QuizFragment : BaseFragment<QuizState, QuizViewModel>(R.layout.fragment_te
         }
         adapter.items = items
         adapter.notifyDataSetChanged()
+
+        if (state.result.isNotEmpty())
+            MaterialAlertDialogBuilder(requireContext()).setTitle("Итоги").setMessage(state.result)
+                .setPositiveButton("Понятно") { _, _ -> }
+                .create().show()
     }
 
     override fun onBackPressed() {

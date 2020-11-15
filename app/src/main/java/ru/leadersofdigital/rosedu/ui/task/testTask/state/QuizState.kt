@@ -4,5 +4,6 @@ import ru.leadersofdigital.rosedu.models.model.Quiz
 
 data class QuizState(
     val title: String,
-    val listTests: List<Quiz>
+    val listTests: List<Quiz>,
+    val result: String
 )

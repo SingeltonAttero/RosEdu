@@ -1,10 +1,7 @@
 package ru.leadersofdigital.rosedu.models
 
 import ru.leadersofdigital.rosedu.core.validator.Validator
-import ru.leadersofdigital.rosedu.models.model.GooseConnections
-import ru.leadersofdigital.rosedu.models.model.Quiz
-import ru.leadersofdigital.rosedu.models.model.SubDevice
-import ru.leadersofdigital.rosedu.models.model.TypeConnection
+import ru.leadersofdigital.rosedu.models.model.*
 
 class MainTaskRepository {
     private val deviceList: MutableList<SubDevice> = mutableListOf()
@@ -16,6 +13,8 @@ class MainTaskRepository {
     private var selectedDeviceId: Int? = null
 
     fun getSelectedDevice() = deviceList.firstOrNull { it.id == selectedDeviceId }
+
+    fun getIedDevices() = deviceList.filter { it.type == TypeDevice.RZA }
 
     fun setSelectedDevice(id: Int) {
         selectedDeviceId = deviceList.firstOrNull { it.id == id }?.id
@@ -38,7 +37,7 @@ class MainTaskRepository {
         quizList = items.toMutableList()
     }
 
-    fun validateAll() {
+    fun validateAll() =
         Validator.validateAll(deviceList, gooseConnections, quizList)
-    }
+
 }

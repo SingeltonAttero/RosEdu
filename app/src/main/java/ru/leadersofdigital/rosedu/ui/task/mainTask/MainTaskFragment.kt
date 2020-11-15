@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
+import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import coil.load
 import kotlinx.android.synthetic.main.drop_view_item.view.*
@@ -23,8 +24,10 @@ import ru.leadersofdigital.rosedu.core.scene.SceneFrameLayout
 import ru.leadersofdigital.rosedu.di.Qualifiers
 import ru.leadersofdigital.rosedu.models.model.TypeConnection
 import ru.leadersofdigital.rosedu.models.model.TypeDevice
+import ru.leadersofdigital.rosedu.ui.Screens
 import ru.leadersofdigital.rosedu.ui.device.DeviceFragment
 import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogDeviceSettings.DeviceSettingsDialogFragment
+import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogGooseSettings.GooseSettingsDialogFragment
 import ru.leadersofdigital.rosedu.ui.task.mainTask.dialogNetworkSettings.NetworkSettingsDialogFragment
 import ru.leadersofdigital.rosedu.ui.task.mainTask.state.MainTaskState
 import ru.terrakok.cicerone.Router
@@ -64,10 +67,20 @@ class MainTaskFragment : BaseFragment<MainTaskState, MainTaskViewModel>(R.layout
             }
             true
         }
+
+        btnSubscriptionGoose.clicks { GooseSettingsDialogFragment.newInstance().show(childFragmentManager, null) }
+        btnSendGoose.clicks { router.navigateTo(Screens.QuizScreen) }
     }
 
     override fun renderState(state: MainTaskState) {
         containerScene.removeAllViews()
+        if(state.itemScenes.count { it.isOpenConnect } >= 2 )
+        {
+            btnSendGoose.isVisible = true
+        }
+        else {
+            btnSendGoose.isInvisible = true
+        }
         val startPositionConnection = mutableListOf<SceneFrameLayout.DrawLineField>()
         var endPositionConnectionX: Int? = null
         var endPositionConnectionY: Int? = null
@@ -110,7 +123,7 @@ class MainTaskFragment : BaseFragment<MainTaskState, MainTaskViewModel>(R.layout
                 container.ivMenuConnection.isVisible = scene.isSelected
                 container.ivMenuSetting.clicks {
                     viewModel.setDeviceSelected(scene.subDevice.id, scene.subDevice.type)
-                    NetworkSettingsDialogFragment.newInstance().show(childFragmentManager, null)
+                    DeviceSettingsDialogFragment.newInstance().show(childFragmentManager, null)
                 }
                 container.ivMenuConnection.clicks {
                     viewModel.handleMenuConnection(scene.subDevice.id)
@@ -128,7 +141,7 @@ class MainTaskFragment : BaseFragment<MainTaskState, MainTaskViewModel>(R.layout
                 }
                 container.ivMenuSetting.clicks {
                     viewModel.setDeviceSelected(scene.subDevice.id, scene.subDevice.type)
-                    DeviceSettingsDialogFragment.newInstance().show(childFragmentManager, null)
+                    NetworkSettingsDialogFragment.newInstance().show(childFragmentManager, null)
                 }
             }
             container.ivMenuSetting.isVisible = scene.isSelected
@@ -157,6 +170,7 @@ class MainTaskFragment : BaseFragment<MainTaskState, MainTaskViewModel>(R.layout
         }.forEach {
             containerScene.addDrawConnections(it, creatPaint(it.typeConnection))
         }
+        println(startPositionConnection.size)
         containerScene.allDrawConnection()
     }
 
