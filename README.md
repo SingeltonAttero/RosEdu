@@ -16,6 +16,7 @@
     * диагональ 8.86
     * разрешения экрана  2048x1536 
     * рекомендуемое устройство в эмуляторе NEXUS 9 API 29
+ * Эмуляторы Bluestack, Genymotion и т.д. позволяют использовать приложение на операционной системе Windows.
  * Для реального устройство 
      * android os версия 6 или выше 
      * диагональ 8.86
@@ -37,7 +38,7 @@
  
 * Настройки коммутатора
   
-  ![setting_switcher_1](https://github.com/askont/RosEdu/blob/master/image/setting_switcher_1.png)
+![setting_switcher_1](https://github.com/askont/RosEdu/blob/master/image/setting_switcher_1.png)
   
 * Настройка устройства 
 
